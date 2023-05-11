@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BMI Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="hdrTitle" style="text-align: center;">
+    BMI Calculator
+  </div>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Height: </ion-label>
+        <ion-input type="number" [clearInput]="true" placeholder="Enter height (หน่วยเป็นเมตร)" [(ngModel)]="height"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weight: </ion-label>
+        <ion-input type="number" [clearInput]="true" placeholder="Enter weight (kg)" [(ngModel)]="weight"></ion-input>
+      </ion-item>
+      
+    </ion-col>
+
+
+  </ion-row>
+</ion-grid>
+<div style="text-align: center;">
+<ion-button id = "res-alert" (click)="bmiCalculate()">Calculate</ion-button>
+<ion-alert trigger="res-alert" header="Your BMI is" subHeader="{{bmilevel}}" message="{{bmi}}" [buttons]="alertButtons"></ion-alert>
+</div>  
+</ion-content>
