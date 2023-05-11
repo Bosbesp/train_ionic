@@ -4,18 +4,21 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Page1Component } from './page1/page1.component';
-import { FormsModule } from '@angular/forms';
-import { AboutMePageModule } from './about-me/about-me.module';
+import { AboutMePage } from './about-me/about-me.page';
+import { CalculateBMRComponent } from './calculate-bmr/calculate-bmr.component';
+
+
 @NgModule({
-  declarations: [AppComponent, Page1Component,],
+  declarations: [AppComponent, Page1Component,AboutMePage,CalculateBMRComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

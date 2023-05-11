@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>BMR Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <ion-label>Gender:</ion-label>
+    <ion-select aria-label="Fruit" placeholder="Gender" [(ngModel)]="gender">
+      <ion-select-option value="male">Male</ion-select-option>
+      <ion-select-option value="female">Female</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Age:</ion-label>
+    <ion-input type="number" [(ngModel)]="age"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Weight (kg):</ion-label>
+    <ion-input type="number" [(ngModel)]="weight"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Height (cm):</ion-label>
+    <ion-input type="number" [(ngModel)]="height"></ion-input>
+  </ion-item>
+
+  <ion-button  class="btn-cal" (click)="calculateBMR()">Calculate BMR</ion-button>
+
+  <div *ngIf="bmr">
+    Your BMR is {{bmr}} calories per day.
+  </div>
+</ion-content>
